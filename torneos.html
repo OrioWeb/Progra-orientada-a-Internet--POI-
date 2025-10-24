@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mundial Social 2026 - Torneos</title>
+  <link rel="stylesheet" href="main.css">
+</head>
+<body>
+  <!-- ENCABEZADO -->
+  <header class="navbar" style="background:#03760c;">
+    <div class="left-nav">
+      <div class="logo">🌍 Mundial 2026</div>
+      <input type="text" placeholder="Buscar en la app..." class="search">
+    </div>
+    <div class="center-nav">
+      <a href="main.html">🏠 Inicio</a>
+      <a href="grupos.html">👥 Grupos</a>
+      <a href="torneos.html" class="active">⚽ Simulación</a>
+      <a href="tareas.html">📋 Tareas</a>
+      <a href="recompensas.html">🏆 Recompensas</a>
+    </div>
+    <div class="right-nav">
+      <span onclick="showNotification()">🔔</span>
+      <span>💬</span>
+      <img src="user.jpg" alt="Usuario" class="avatar">
+    </div>
+  </header>
+
+  <!-- CONTENEDOR PRINCIPAL -->
+  <div class="torneo-container">
+    <!-- Paso 1: Selección de equipo -->
+    <section id="step1" class="step active">
+      <h2>⚽ Simulación del Mundial</h2>
+      <p>Selecciona tu equipo favorito y comienza el torneo.</p>
+      <select id="equipoSelect">
+        <option value="México">🇲🇽 México</option>
+        <option value="Alemania">🇩🇪 Alemania</option>
+        <option value="Brasil">🇧🇷 Brasil</option>
+        <option value="Argentina">🇦🇷 Argentina</option>
+        <option value="Canadá">🇨🇦 Canadá</option>
+      </select>
+      <button onclick="iniciarSimulacion()">Iniciar Simulación</button>
+    </section>
+
+    <!-- Paso 2: Partido en curso -->
+    <section id="step2" class="step hidden">
+      <h2>Partido en Curso...</h2>
+      <div class="match">
+        <span id="teamA"></span>
+        <strong>VS</strong>
+        <span id="teamB"></span>
+      </div>
+      <p id="suspense">Esperando resultado...</p>
+    </section>
+
+    <!-- Paso 3: Resultado del partido -->
+    <section id="step3" class="step hidden">
+      <h2>Resultado</h2>
+      <div class="match">
+        <span id="resultadoA"></span>
+        <strong>-</strong>
+        <span id="resultadoB"></span>
+      </div>
+      <p id="mensajeResultado"></p>
+      <button id="btnSiguiente" onclick="siguienteFase()">Siguiente</button>
+    </section>
+
+    <!-- Paso 4: Resultados generales -->
+    <section id="step4" class="step hidden">
+      <h2>🏁 Resultados Generales</h2>
+      <p>Historial de tu equipo en esta simulación:</p>
+      <ul id="historial"></ul>
+      <button onclick="mostrarRecompensas()">Ver Recompensas</button>
+    </section>
+
+    <!-- Paso 5: Recompensas -->
+    <section id="step5" class="step hidden">
+      <h2>🎉 Recompensas Obtenidas</h2>
+      <p id="recompensasTexto">Has recibido 50 puntos y una medalla 🏅</p>
+      <button onclick="reiniciarTorneo()">Aceptar</button>
+    </section>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer" style="background:#03760c;">
+    <p>App Social del Mundial 2026 - Proyecto Universitario</p>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - Mundial Social 2026</title>
+  <link rel="stylesheet" href="main.css">
+</head>
+<body class="login-body">
+  <div class="login-container">
+    <div class="login-box">
+      <h2>🌍 Mundial Social 2026</h2>
+      <p class="subtitle">Inicia sesión para continuar</p>
+      <form id="loginForm">
+        <input type="email" id="email" placeholder="Correo electrónico" required>
+        <input type="password" id="password" placeholder="Contraseña" required>
+        <button type="submit">Iniciar Sesión</button>
+      </form>
+      <div class="login-links">
+        <a href="#">¿Olvidaste tu contraseña?</a> |
+        <a href="registro.html">Crear cuenta nueva</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="main.js"></script>
+  <script>
+    // Validación simple de login
+    document.getElementById("loginForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      const email = document.getElementById("email").value.trim();
+      const password = document.getElementById("password").value.trim();
+
+      if (email === "" || password === "") {
+        alert("⚠️ Por favor completa todos los campos.");
+      } else if (password.length < 6) {
+        alert("⚠️ La contraseña debe tener al menos 6 caracteres.");
+      } else {
+        // Aquí después se conecta con backend / base de datos
+        alert("✅ Bienvenido a Mundial Social 2026");
+        window.location.href = "main.html"; // Redirigir al inicio
+      }
+    });
+  </script>
+</body>
+</html>

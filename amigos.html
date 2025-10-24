@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Amigos</title>
+  <link rel="stylesheet" href="main.css">
+</head>
+<body>
+  <!--ENCABEZADO/MENU *******************************************************************************************************************************-->
+  <header class="navbar">
+    <div class="left-nav">
+      <div class="logo">🌍 Mundial 2026</div>
+      <input type="text" placeholder="Buscar en la app..." class="search">
+    </div>
+    <div class="center-nav">
+      <a href="main.html">🏠 Inicio</a>
+      <a href="grupos.html">👥 Grupos</a>
+      <a href="torneos.html">⚽ Simulación</a>
+      <a href="tareas.html">📋 Tareas</a>
+      <a href="recompensas.html">🏆 Recompensas</a>
+    </div>
+    <div class="right-nav">
+      <span onclick="showNotification()">🔔</span>
+      <span>💬</span>
+      <img src="user.jpg" alt="Usuario" class="avatar">
+    </div>
+  </header>
+
+
+  <div class="main-container">
+    <aside class="sidebar-left">
+      <h4>Menú</h4>
+      <ul>
+        <li>📨 Chat</li>
+        <li><a href="amigos.html">👥 Amigos</a></li>
+        <li>🎮 Juegos y Retos</li>
+        <li>⚙️ Configuración</li>
+      </ul>
+    </aside>
+
+    <main class="content">
+      <h1>Página de Amigos</h1>
+        <!-- Barra de búsqueda -->
+        <input 
+        type="text" 
+        id="buscadorAmigos" 
+        placeholder="Buscar amigo..." 
+        class="search-amigos">
+        </main>
+  </div>
+</body>
+</html>

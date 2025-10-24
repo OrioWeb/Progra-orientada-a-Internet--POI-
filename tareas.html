@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mundial Social 2026 - Tareas</title>
+  <link rel="stylesheet" href="main.css">
+</head>
+<body>
+  <!-- ENCABEZADO -->
+  <header class="navbar">
+    <div class="left-nav">
+      <div class="logo">🌍 Mundial 2026</div>
+      <input type="text" placeholder="Buscar en la app..." class="search">
+    </div>
+    <div class="center-nav">
+      <a href="main.html">🏠 Inicio</a>
+      <a href="grupos.html">👥 Grupos</a>
+      <a href="torneos.html">⚽ Simulación</a>
+      <a href="tareas.html" class="active">📋 Tareas</a>
+      <a href="recompensas.html">🏆 Recompensas</a>
+    </div>
+    <div class="right-nav">
+      <span onclick="showNotification()">🔔</span>
+      <span>💬</span>
+      <img src="user.jpg" alt="Usuario" class="avatar">
+    </div>
+  </header>
+
+  <!-- CONTENEDOR PRINCIPAL -->
+  <div class="main-container">
+    <!-- COLUMNA IZQUIERDA -->
+    <aside class="sidebar-left">
+      <h4>Tareas</h4>
+      <ul>
+        <li>📌 Todas</li>
+        <li>⏳ Pendientes</li>
+        <li>✅ Completadas</li>
+      </ul>
+
+      <h4>Acciones</h4>
+      <ul>
+        <li>➕ Crear Tarea</li>
+      </ul>
+    </aside>
+
+    <!-- COLUMNA CENTRAL -->
+    <main class="feed">
+      <div class="post">
+        <h3>📋 Investigar estadios</h3>
+        <p>Encuentra información sobre los 3 estadios principales del Mundial.</p>
+        <small>Estado: ⏳ Pendiente</small>
+        <br>
+        <button onclick="markDone(this)">Marcar como completada</button>
+      </div>
+
+      <div class="post">
+        <h3>📊 Ranking de equipos</h3>
+        <p>Revisar el ranking FIFA más reciente y actualizar la lista de poder de equipos.</p>
+        <small>Estado: ⏳ Pendiente</small>
+        <br>
+        <button onclick="markDone(this)">Marcar como completada</button>
+      </div>
+
+      <div class="post completed">
+        <h3>📸 Compartir imágenes</h3>
+        <p>Sube fotos de los estadios donde se jugará la Copa.</p>
+        <small>Estado: ✅ Completada</small>
+      </div>
+    </main>
+
+    <!-- COLUMNA DERECHA -->
+    <aside class="sidebar-right">
+      <h4>Recompensas por Tareas</h4>
+      <ul>
+        <li>🏆 50 pts - Investigar estadios</li>
+        <li>🥇 40 pts - Ranking de equipos</li>
+        <li>🎖️ 20 pts - Compartir imágenes</li>
+      </ul>
+
+      <h4>Sugerencias</h4>
+      <div class="ad">💡 Trabaja con tu grupo para completar más rápido y ganar más puntos.</div>
+    </aside>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>App Social del Mundial 2026 - Proyecto Universitario</p>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,305 @@
+/* RESET GLOBAL */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* BASE GLOBAL */
+html, body {
+  height: 100%;
+  font-family: Arial, sans-serif;
+  background: #f0f2f5;
+  display: flex;
+  flex-direction: column;
+}
+
+/* NAVBAR */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #03760c;
+  padding: 10px 20px;
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.left-nav {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.search {
+  padding: 5px 10px;
+  border-radius: 20px;
+  border: none;
+}
+
+.center-nav a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+
+.center-nav a:hover {
+  text-decoration: underline;
+}
+
+.right-nav {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.avatar {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  border: 2px solid white;
+}
+
+/* MAIN LAYOUT */
+.main-container {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 240px 1fr 280px;
+  gap: 15px;
+  padding: 15px;
+}
+
+/* SIDEBARS */
+.sidebar-left, .sidebar-right {
+  background: white;
+  border-radius: 8px;
+  padding: 15px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.sidebar-left h4, .sidebar-right h4 {
+  margin-bottom: 10px;
+}
+
+.sidebar-left ul, .sidebar-right ul, .sidebar-right ol {
+  list-style: none;
+}
+
+.sidebar-left li, .sidebar-right li {
+  margin: 10px 0;
+  cursor: pointer;
+}
+
+.sidebar-right .ad {
+  background: #eaeaea;
+  border-radius: 6px;
+  padding: 10px;
+  text-align: center;
+  font-size: 0.9rem;
+  margin-top: 10px;
+}
+
+/* FEED CENTRAL */
+.feed {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.post {
+  background: white;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+/* FOOTER */
+.footer {
+  background:#03760c;
+  color: white;
+  text-align: center;
+  padding: 12px;
+  margin-top: auto;
+}
+
+/* ----------------- PANTALLA DE TORNEOS ----------------- */
+.torneo-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.step {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+  width: 90%;
+  max-width: 600px;
+  text-align: center;
+}
+
+.step.hidden { display: none; }
+
+.match {
+  font-size: 1.5rem;
+  margin: 20px 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+button {
+  margin-top: 15px;
+  padding: 10px 20px;
+  border: none;
+  background: #03760c;
+  color: white;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #025908;
+}
+
+/* ----------------- PANTALLA DE TAREAS ----------------- */
+.completed {
+  background: #e6ffe6;
+  border-left: 5px solid #28a745;
+}
+
+/* ----------------- PANTALLA DE RECOMPENSAS ----------------- */
+.recompensas-page .feed ul {
+  margin: 10px 0 0 20px;
+}
+.recompensas-page .feed li {
+  margin: 6px 0;
+}
+
+/* ----------------- PANTALLA DE USUARIO ----------------- */
+.usuario-page .feed ul {
+  margin: 8px 0 0 20px;
+}
+.usuario-page .feed li {
+  margin: 5px 0;
+}
+
+/* ----------------- PANTALLA DE LOGIN ----------------- */
+/* LOGIN PAGE */
+.login-body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #034401, #04f614);
+}
+
+.login-container {
+  width: 100%;
+  max-width: 400px;
+}
+
+.login-box {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  text-align: center;
+}
+
+.login-box h2 {
+  margin-bottom: 10px;
+}
+
+.login-box .subtitle {
+  margin-bottom: 20px;
+  color: #666;
+}
+
+.login-box input {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  outline: none;
+}
+
+.login-box button {
+  width: 100%;
+  padding: 12px;
+  background: #035c11;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.login-box button:hover {
+  background: #b8d4b8;
+}
+
+.login-links {
+  margin-top: 15px;
+  font-size: 0.9rem;
+}
+
+.login-links a {
+  color: #0077ff;
+  text-decoration: none;
+}
+
+.login-links a:hover {
+  text-decoration: underline;
+}
+
+
+/* ----------------- PANTALLA DE REGISTRO ----------------- */
+.green-theme {
+  background: linear-gradient(135deg, #03760c, #00c853);
+}
+
+.green-theme .login-box button {
+  background: #03760c;
+}
+
+.green-theme .login-box button:hover {
+  background: #025809;
+}
+
+.green-theme .login-links a {
+  color: #03760c;
+}
+
+
+/* Barra de búsqueda de amigos */
+.search-amigos {
+  width: 100%;
+  padding: 8px 12px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Lista de amigos sin viñetas */
+.amigos-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.amigos-list li {
+  padding: 6px 10px;
+  border-bottom: 1px solid #eee;
+}
+

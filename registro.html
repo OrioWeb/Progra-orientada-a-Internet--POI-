@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registro - Mundial Social 2026</title>
+  <link rel="stylesheet" href="main.css">
+</head>
+<body class="login-body green-theme">
+  <div class="login-container">
+    <div class="login-box">
+      <h2>🌍 Mundial Social 2026</h2>
+      <p class="subtitle">Crea tu cuenta para unirte</p>
+      <form id="registerForm">
+        <input type="text" id="name" placeholder="Nombre completo" required>
+        <input type="email" id="email" placeholder="Correo electrónico" required>
+        <input type="password" id="password" placeholder="Contraseña" required>
+        <input type="password" id="confirmPassword" placeholder="Confirmar contraseña" required>
+        <button type="submit">Crear Cuenta</button>
+      </form>
+      <div class="login-links">
+        <a href="login.html">¿Ya tienes cuenta? Inicia sesión</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="main.js"></script>
+  <script>
+    // Validación simple de registro
+    document.getElementById("registerForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      const name = document.getElementById("name").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const password = document.getElementById("password").value.trim();
+      const confirmPassword = document.getElementById("confirmPassword").value.trim();
+
+      if (!name || !email || !password || !confirmPassword) {
+        alert("⚠️ Por favor completa todos los campos.");
+      } else if (password.length < 6) {
+        alert("⚠️ La contraseña debe tener al menos 6 caracteres.");
+      } else if (password !== confirmPassword) {
+        alert("⚠️ Las contraseñas no coinciden.");
+      } else {
+        alert("✅ Registro exitoso. Bienvenido a Mundial Social 2026");
+        window.location.href = "index.html"; // Redirigir al inicio
+      }
+    });
+  </script>
+</body>
+</html>
