@@ -1,4 +1,4 @@
-import { config } from "../config/constantes";
+import { config } from "../config/constantes.js";
 
 export class Limiter{
     constructor(){ //corroborar que el usuario no este spameando

@@ -1,4 +1,4 @@
-import { config } from "../configs/constantes.js";
+import { config } from "../config/constantes.js";
 
 export function validateUsername(username){
     if(!username){

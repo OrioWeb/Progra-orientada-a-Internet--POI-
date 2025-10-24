@@ -1,4 +1,4 @@
-import { config } from "../config/constantes";
+import { config } from "../config/constantes.js";
 
 //Almacenamiento "local" de los mensajes enviados (aun no hay db)
 export class MsgHst{

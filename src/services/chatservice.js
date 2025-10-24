@@ -1,6 +1,6 @@
-import { Limiter } from "../utilities/limit";
-import { validateMsg, validateUsername } from "../utilities/validator";
-import { MsgHst } from "./msghistory";
+import { Limiter } from "../utilities/limit.js";
+import { validateMsg, validateUsername } from "../utilities/validator.js";
+import { MsgHst } from "./msghistory.js";
 
 export class chatservice {
     constructor(wss) {
@@ -14,6 +14,18 @@ export class chatservice {
         console.log("Cliente conectado");
         ws.isactive = true;
         ws.username = null;
+        ws.on("pong",()=>{
+            ws.isactive = true;
+        })
+        ws.on("mensaje",(mensaje)=>{
+            this.ManejarMensaje(ws, mensaje)
+        })
+        ws.on("error",(error)=>{
+            console.log(`Error del websocket ${error}`);
+        })
+        ws.on("close",()=>{
+            console.log(`Cliente desconectado ${ws.username}`);
+        })
     }
 
     Broadcast(data) {       //Metodo para transmitir mensajes a los clientes que se encuentran conectados

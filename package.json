@@ -2,7 +2,7 @@
   "name": "progra-orientada-a-internet--poi-",
   "version": "1.0.0",
   "description": "PIA de POI",
-  "main": "main.js",
+  "main": "server.js",
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
