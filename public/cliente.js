@@ -156,7 +156,7 @@ form.addEventListener('submit', (e) => {
     
     try {
         ws.send(JSON.stringify({ 
-            TYPE: 'message',
+            TYPE: 'mensaje',
             text: input.value,
             username: username
         }));

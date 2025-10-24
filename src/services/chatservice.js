@@ -17,8 +17,8 @@ export class chatservice {
         ws.on("pong",()=>{
             ws.isactive = true;
         })
-        ws.on("mensaje",(mensaje)=>{
-            this.ManejarMensaje(ws, mensaje)
+        ws.on("message",(mensaje)=>{
+            this.ManejarMensaje(mensaje, ws)
         })
         ws.on("error",(error)=>{
             console.log(`Error del websocket ${error}`);
@@ -29,12 +29,12 @@ export class chatservice {
     }
 
     Broadcast(data) {       //Metodo para transmitir mensajes a los clientes que se encuentran conectados
-        this.wss.clients.array.forEach((client) => {
-            if (client.readystate === WebSocket.OPEN) {
+        this.wss.clients.forEach((client) => {
+            if (client.readyState === 1) { // 1 = OPEN
                 try {
                     client.send(JSON.stringify(data));
                 } catch (error) {
-                    console.error("Error al transmitir mensaje")
+                    console.error("Error al transmitir mensaje:", error)
                 }
             }
         });
@@ -59,9 +59,9 @@ export class chatservice {
         }
 
         const datatransfer = {
-            TEXTO: validacion,
-            USUARIO: ws.username,
-            TIMESTAMP: new Date().toLocaleDateString()
+            text: validacion.cleaned,
+            username: ws.username,
+            timestamp: new Date().toLocaleTimeString()
         };
 
         this.mensajehistory.Add(datatransfer); //Para mandarlo a ti mismo
@@ -69,10 +69,10 @@ export class chatservice {
     }
 
     sendError(ws, error) {
-        if (ws.readyState === WebSocket.OPEN) {
+        if (ws.readyState === 1) { // 1 = OPEN
             try {
                 ws.send(JSON.stringify({
-                    type: 'error',
+                    TYPE: 'error',
                     error: error
                 }));
             } catch (e) {
@@ -89,13 +89,13 @@ export class chatservice {
             return;
         }
 
-        ws.username = validacion;
+        ws.username = validacion.cleaned;
         console.log(`Usuario logeado ${ws.username}`);
 
         if(this.mensajehistory.Count() > 0){      //TRAER EL HISTORIAL DE MENSAJES EN CASO DE SI EXISTAN MENSAJES
             ws.send(JSON.stringify({
-                MENSAJE: this.mensajehistory.GetAll(),
-                TYPE: history
+                messages: this.mensajehistory.GetAll(),
+                TYPE: 'mensaje'
             }));
         }
     }

@@ -5,7 +5,6 @@ import path from "path";
 import { fileURLToPath } from "url";
 import { WebSocketServer } from "ws";
 import { chatservice } from "./src/services/chatservice.js";
-import { error } from "console";
 import { config } from "./src/config/constantes.js";
 
 
@@ -18,13 +17,13 @@ const server = http.createServer(app);
 const wss = new WebSocketServer({server});
 app.use(express.static(path.join(__dirname, 'public')));
 
-const chat= new chatservice(wss);
-wss.on("conexion",(ws)=>{
-    chatservice.ManejarConexion(ws);
+const chat = new chatservice(wss);
+wss.on("connection", (ws)=>{
+    chat.ManejarConexion(ws);
 })
 
 wss.on("error", (error)=>{
-    console.error("Error del server");
+    console.error("Error del server:", error);
 })
 
 const port = config.PORT;
